@@ -1,0 +1,19 @@
+{
+    "manifest_version": 3,
+    "name": "Grok TypeScript MIME Type Cleaner",
+    "version": "1.0",
+    "description": "Clears the fileMimeType when uploading TypeScript files to Grok",
+    "permissions": ["scripting"],
+    "host_permissions": ["*://grok.com/*"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["*://grok.com/*"],
+        "js": ["content.js"],
+        "run_at": "document_start"
+      }
+    ]
+  }
+  
